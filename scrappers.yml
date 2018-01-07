@@ -1,0 +1,112 @@
+name: sphere
+channels:
+- anaconda
+- conda-forge
+- defaults
+dependencies:
+- appnope=0.1.0=py27hb466136_0
+- asn1crypto=0.23.0=py27h862e517_0
+- backports=1.0=py27hb4f9756_1
+- backports.shutil_get_terminal_size=1.0.0=py27hc9115de_2
+- backports_abc=0.5=py27h6972548_0
+- bleach=2.0.0=py27ha7d1710_0
+- cffi=1.11.2=py27h21b8a49_0
+- chardet=3.0.4=py27h2842e91_1
+- configparser=3.5.0=py27hc7edf1b_0
+- cryptography=2.0.3=py27hab69567_1
+- decorator=4.1.2=py27h9f877ea_0
+- entrypoints=0.2.3=py27hd680fb1_2
+- enum34=1.1.6=py27hf475452_1
+- functools32=3.2.3.2=py36h130578f_1
+- html5lib=0.999999999=py27hec7e2bc_0
+- icu=54.1=0
+- idna=2.6=py27hedea723_1
+- intel-openmp=2018.0.0=h8158457_8
+- ipaddress=1.0.18=py27h5b9a5b9_0
+- ipykernel=4.6.1=py27h1e70a78_0
+- ipython=5.4.1=py27h2b3d779_1
+- ipython_genutils=0.2.0=py27h8b9a179_0
+- ipywidgets=7.0.0=py27h3e52029_0
+- jinja2=2.9.6=py27h92590e2_1
+- jsonschema=2.6.0=py27hd9b497e_0
+- jupyter=1.0.0=py27_3
+- jupyter_client=5.1.0=py27hfaf569a_0
+- jupyter_console=5.2.0=py27h9702a86_1
+- jupyter_core=4.3.0=py27hd5161ba_0
+- libcxx=4.0.1=h579ed51_0
+- libcxxabi=4.0.1=hebd6815_0
+- libffi=3.2.1=h475c297_4
+- libgfortran=3.0.1=h93005f0_2
+- libiconv=1.15=hdd342a3_7
+- libsodium=1.0.13=hba5e272_2
+- libxml2=2.9.4=0
+- libxslt=1.1.29=0
+- lxml=4.1.1=py27ha46c8db_0
+- markupsafe=1.0=py27hd3c86fa_1
+- mistune=0.7.4=py27h1658d75_0
+- mkl=2018.0.1=hfbd8650_4
+- nbconvert=5.3.1=py27h6455e4c_0
+- nbformat=4.4.0=py27hddc86d0_0
+- notebook=5.0.0=py27h5f5981d_2
+- numpy=1.13.3=py27h62f9060_0
+- pandoc=1.19.2.1=ha5e8f32_1
+- pandocfilters=1.4.2=py27hed78c4e_1
+- pathlib2=2.3.0=py27he09da1e_0
+- pexpect=4.2.1=py27hc4e4961_0
+- pickleshare=0.7.4=py27h37e3d41_0
+- prompt_toolkit=1.0.15=py27h4a7b9c2_0
+- ptyprocess=0.5.2=py27h70f6364_0
+- pycparser=2.18=py27h0d28d88_1
+- pygments=2.2.0=py27h1a556bb_0
+- pyopenssl=17.4.0=py27hebdda09_0
+- pyqt=5.6.0=py27_2
+- pysocks=1.6.7=py27h1cff6a6_1
+- python-dateutil=2.6.1=py27hd56c96b_1
+- pyzmq=16.0.2=py27he61c07e_2
+- qt=5.6.2=2
+- qtconsole=4.3.1=py27hdc90b4f_0
+- requests=2.18.4=py27h9b2b37c_1
+- scandir=1.6=py27h97aa1ee_0
+- simplegeneric=0.8.1=py27_1
+- singledispatch=3.4.0.3=py27he22c18d_0
+- sip=4.18.1=py27h6300f65_2
+- six=1.11.0=py27h7252ba3_1
+- ssl_match_hostname=3.5.0.1=py27h8780752_2
+- terminado=0.6=py27he40bf16_0
+- testpath=0.3.1=py27h72d81a5_0
+- tornado=4.5.2=py27h29aec9e_0
+- traitlets=4.3.2=py27hcf08151_0
+- urllib3=1.22=py27hc3787e9_0
+- wcwidth=0.1.7=py27h817c265_0
+- webencodings=0.5.1=py27h19a9f58_1
+- widgetsnbextension=3.0.2=py27h56f70de_1
+- zeromq=4.2.2=h6ba739c_1
+- ca-certificates=2017.7.27.1=0
+- certifi=2017.7.27.1=py27_0
+- ncurses=5.9=10
+- openssl=1.0.2l=0
+- pandas=0.22.0=py27_0
+- pip=9.0.1=py27_0
+- python=2.7.14=0
+- pytz=2017.3=py_2
+- readline=6.2=0
+- selenium=3.6.0=py27_0
+- setuptools=36.6.0=py27_1
+- sqlite=3.13.0=1
+- tk=8.5.19=2
+- wheel=0.30.0=py_1
+- zlib=1.2.8=3
+- pip:
+  - backports-abc==0.5
+  - backports.shutil-get-terminal-size==1.0.0
+  - backports.ssl-match-hostname==3.5.0.1
+  - ipython-genutils==0.2.0
+  - jupyter-client==5.1.0
+  - jupyter-console==5.2.0
+  - jupyter-core==4.3.0
+  - prompt-toolkit==1.0.15
+  - requests-file==1.4.3
+  - selenium-requests==1.3
+  - tldextract==2.2.0
+prefix: /Users/kdgutier/anaconda2/envs/sphere
+
