@@ -21,6 +21,7 @@ class Base:
         self.xpath_enterprise = 'definir'
         self.xpath_type_service = 'definir'
         self.xpath_sale_price = 'definir'
+        self.xpath_descount_price = 'definir'
 
     def origen_destino(self):
         """
@@ -78,6 +79,18 @@ class Base:
         precio = map(self.limpieza_precio, price)
         return precio
     
+
+    def precio_descuento(self):
+        """
+        Retrieving price of service.
+        :self.xpath_descount_price: html pointer for price.
+        return: clean descount_price.
+        """
+        descount_price = self.html.xpath(self.xpath_descount_price)
+        precio_descuento = map(self.limpieza_precio, descount_price)
+        return precio_descuento
+
+
     def limpieza_texto(self,strin):
         strin2 = ' '.join(strin.split())
         return strin2
@@ -95,7 +108,8 @@ class Base:
         tipo = self.tipo_servicio()
         empresa = self.empresa()
         precio = self.precio()
-        info = [origen, destino, salida, llegada, tipo, empresa, precio]
+        precio_descuento = self.precio_descuento()
+        info = [origen, destino, salida, llegada, tipo, empresa, precio,precio_descuento]
         return info
 
 class Clickbus(Base):
@@ -106,7 +120,7 @@ class Clickbus(Base):
         #self.page = requests.get(self.url, headers=self.headers)
         #self.html = html.fromstring(self.page.content)
         #self.driver = webdriver.PhantomJS()
-        self.driver = webdriver.Chrome()
+        self.driver = webdriver.Chrome("/Users/jamancilla/Dropbox/Projects/bus_scrappers/chromedriver")
         self.driver.get(self.url)
         time.sleep(15)
         self.page = self.driver.page_source
@@ -114,9 +128,10 @@ class Clickbus(Base):
         self.html = html.fromstring(self.page)
         self.base = '//div[@class="trip-information"]'
         self.xpath_origin = self.base+'//div[@class="info-row station from ng-binding"]//text()'
-        self.xpath_destination = self.base+'//div[@class="info-row station from ng-binding"]//text()'
+        self.xpath_destination = self.base+'//div[@class="info-row station to ng-binding"]//text()'
         self.xpath_departure = self.base+'//div[@class="info-row schedule departure ng-binding"]//text()'
         self.xpath_arrival = self.base+'//div[@class="info-row schedule arrival ng-binding"]//text()'
         self.xpath_enterprise = self.base+'//div[@class="company info-container"]//span[@class="hidden ng-binding"]//text()'
         self.xpath_type_service = '//div[@class="trip-services"]//span[@class="service-class ng-binding"]//text()'
-        self.xpath_sale_price = self.base+'//div[@class="normal-price"]//span[@itemprop="price"]//text()'
+        self.xpath_sale_price = self.base+'//div[@class="normal-price" or @class="normal-price cancel"]//span[@itemprop="price"]//text()'
+        self.xpath_descount_price= self.base+'//div[@class="offer-price ng-scope" or @class="normal-price"]//span[@itemprop="offer" or @itemprop="price"]//text()'
